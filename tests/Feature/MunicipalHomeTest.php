@@ -1,6 +1,7 @@
 <?php
 
 use App\Livewire\ContactForm;
+use App\Livewire\HomePage;
 use App\Livewire\NavigationMenu;
 use App\Livewire\NewsSection;
 use App\Livewire\ServiceDirectory;
@@ -10,6 +11,10 @@ it('renders the municipal home page', function () {
     $this->get(route('home'))
         ->assertSuccessful()
         ->assertSee('Municipalidad de Cholchol')
+        ->assertSee('Contactos municipales')
+        ->assertSee('OMIL')
+        ->assertSee('452 734236')
+        ->assertSee('Ver todos los contactos')
         ->assertSee('José Joaquín Pérez 449, Cholchol, Región de La Araucanía, Chile')
         ->assertSee('Mapa de ubicación de la Municipalidad de Cholchol')
         ->assertSee('LogoAzul-bg4CKnlIXMNGnnMByzWzKw-mHg3fO9z4xvfUq9iMzlCKA.png')
@@ -20,6 +25,22 @@ it('renders the municipal home page', function () {
         ->assertSeeLivewire(ServiceDirectory::class)
         ->assertSeeLivewire(NewsSection::class)
         ->assertSeeLivewire(ContactForm::class);
+});
+
+it('expands and collapses municipal contact numbers', function () {
+    Livewire::test(HomePage::class)
+        ->assertSee('INFORMACIONES')
+        ->assertSee('PROGRAMA MUJER TRABAJADORA Y JEFAS DE HOGAR')
+        ->assertDontSee('REGISTRO SOCIAL DE HOGARES')
+        ->assertSee('Mostrando 5 de 39 contactos municipales.')
+        ->call('toggleMunicipalContacts')
+        ->assertSet('showAllMunicipalContacts', true)
+        ->assertSee('REGISTRO SOCIAL DE HOGARES')
+        ->assertSee('MARIA ARMIJO')
+        ->assertSee('Mostrando 39 de 39 contactos municipales.')
+        ->call('toggleMunicipalContacts')
+        ->assertSet('showAllMunicipalContacts', false)
+        ->assertDontSee('REGISTRO SOCIAL DE HOGARES');
 });
 
 it('opens and closes the responsive navigation menu', function () {
