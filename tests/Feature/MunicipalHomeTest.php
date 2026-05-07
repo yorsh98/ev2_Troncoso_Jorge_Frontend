@@ -10,6 +10,8 @@ it('renders the municipal home page', function () {
     $this->get(route('home'))
         ->assertSuccessful()
         ->assertSee('Municipalidad de Cholchol')
+        ->assertSee('José Joaquín Pérez 449, Cholchol, Región de La Araucanía, Chile')
+        ->assertSee('Mapa de ubicación de la Municipalidad de Cholchol')
         ->assertSee('LogoAzul-bg4CKnlIXMNGnnMByzWzKw-mHg3fO9z4xvfUq9iMzlCKA.png')
         ->assertSee('loggo-chico-mini-letrasblancas-tvKgkW5VNXE40IuRBlPVbw.png')
         ->assertSee('R3.jpg')
