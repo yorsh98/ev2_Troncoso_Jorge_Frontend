@@ -1,4 +1,4 @@
-<section id="noticias" class="bg-[#F4F7FA] py-20" aria-labelledby="news-title">
+<section id="noticias" class="bg-[#F7FAFC] py-20" aria-labelledby="news-title">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <x-ui.section-title eyebrow="Noticias municipales" title="Actualidad comunal y participación" description="Noticias ficticias y verosímiles para la maqueta académica, presentadas con carga dinámica mediante Livewire." id="news-title" />
 

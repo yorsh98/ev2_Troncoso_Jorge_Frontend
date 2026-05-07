@@ -5,12 +5,13 @@
 ])
 
 @php
-    $base = 'inline-flex items-center justify-center gap-2 rounded-full px-5 py-3 text-sm font-bold transition duration-200 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#38A9D6] focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50';
+    $base = 'inline-flex items-center justify-center gap-2 rounded-full px-5 py-3 text-sm font-bold transition duration-200 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#F58220] focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50';
     $variants = [
-        'primary' => 'bg-[#0077A8] text-white shadow-lg shadow-sky-900/10 hover:bg-[#123B63]',
+        'primary' => 'bg-[#215BAD] text-white shadow-lg shadow-blue-900/10 hover:bg-[#033833]',
         'secondary' => 'border border-white/70 bg-white/15 text-white backdrop-blur hover:bg-white/25',
-        'outline' => 'border border-[#0077A8] bg-white text-[#123B63] hover:bg-[#E8F6FB]',
-        'success' => 'bg-[#3A8F5A] text-white shadow-lg shadow-green-900/10 hover:bg-[#2f754a]',
+        'outline' => 'border border-[#215BAD] bg-white text-[#033833] hover:bg-[#E0F1F0]',
+        'success' => 'bg-[#033833] text-white shadow-lg shadow-green-950/10 hover:bg-[#022824]',
+        'accent' => 'bg-[#F58220] text-white shadow-lg shadow-orange-900/10 hover:bg-[#c96718]',
     ];
 @endphp
 

@@ -11,11 +11,11 @@
 @theme {
     --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
 
-    --color-municipal-blue: #0077a8;
-    --color-municipal-navy: #123b63;
-    --color-municipal-sky: #38a9d6;
-    --color-municipal-green: #3a8f5a;
-    --color-municipal-background: #f4f7fa;
+    --color-municipal-blue: #215bad;
+    --color-municipal-navy: #033833;
+    --color-municipal-sky: #e0f1f0;
+    --color-municipal-orange: #f58220;
+    --color-municipal-background: #f7fafc;
 
     --color-zinc-50: #fafafa;
     --color-zinc-100: #f5f5f5;

@@ -1,16 +1,16 @@
-<section id="servicios" class="bg-[#F4F7FA] py-20" aria-labelledby="services-title">
+<section id="servicios" class="bg-[#F7FAFC] py-20" aria-labelledby="services-title">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <x-ui.section-title eyebrow="Servicios municipales" title="Accesos rápidos para la comunidad" description="Busca, filtra y selecciona servicios para conocer información relevante sin recargar la página." id="services-title" />
 
         <div class="mt-10 grid gap-4 rounded-[2rem] border border-slate-200 bg-white p-4 shadow-sm lg:grid-cols-[1fr_18rem] lg:p-6">
             <div>
-                <label for="service-search" class="block text-sm font-bold text-[#123B63]">Buscar servicios</label>
-                <input id="service-search" type="search" wire:model.live.debounce.250ms="search" class="mt-2 w-full rounded-2xl border border-slate-300 bg-white px-4 py-3 text-base text-slate-900 transition placeholder:text-slate-400 focus:border-[#0077A8] focus:outline-none focus:ring-4 focus:ring-[#38A9D6]/30" placeholder="Ejemplo: transparencia, cultura, emergencias" autocomplete="off" aria-describedby="service-count">
+                <label for="service-search" class="block text-sm font-bold text-[#033833]">Buscar servicios</label>
+                <input id="service-search" type="search" wire:model.live.debounce.250ms="search" class="mt-2 w-full rounded-2xl border border-slate-300 bg-white px-4 py-3 text-base text-slate-900 transition placeholder:text-slate-400 focus:border-[#215BAD] focus:outline-none focus:ring-4 focus:ring-[#F58220]/25" placeholder="Ejemplo: transparencia, cultura, emergencias" autocomplete="off" aria-describedby="service-count">
             </div>
 
             <div>
-                <label for="service-category" class="block text-sm font-bold text-[#123B63]">Categoría</label>
-                <select id="service-category" wire:model.live="category" class="mt-2 w-full rounded-2xl border border-slate-300 bg-white px-4 py-3 text-base text-slate-900 transition focus:border-[#0077A8] focus:outline-none focus:ring-4 focus:ring-[#38A9D6]/30" aria-describedby="service-count">
+                <label for="service-category" class="block text-sm font-bold text-[#033833]">Categoría</label>
+                <select id="service-category" wire:model.live="category" class="mt-2 w-full rounded-2xl border border-slate-300 bg-white px-4 py-3 text-base text-slate-900 transition focus:border-[#215BAD] focus:outline-none focus:ring-4 focus:ring-[#F58220]/25" aria-describedby="service-count">
                     @foreach ($categories as $serviceCategory)
                         <option wire:key="category-{{ $serviceCategory }}" value="{{ $serviceCategory }}">{{ $serviceCategory }}</option>
                     @endforeach
@@ -18,7 +18,7 @@
             </div>
         </div>
 
-        <p id="service-count" class="mt-5 text-center text-base font-bold text-[#123B63]" aria-live="polite">
+        <p id="service-count" class="mt-5 text-center text-base font-bold text-[#033833]" aria-live="polite">
             {{ count($this->filteredServices) }} servicios encontrados
         </p>
 
@@ -33,14 +33,19 @@
                 @endforelse
             </div>
 
-            <aside class="h-fit rounded-[2rem] border border-[#0077A8]/20 bg-white p-6 shadow-xl shadow-sky-900/10" aria-labelledby="service-detail-title" aria-live="polite">
+            <aside class="h-fit rounded-[2rem] border border-[#215BAD]/20 bg-white p-6 shadow-xl shadow-blue-900/10" aria-labelledby="service-detail-title" aria-live="polite">
+                <figure class="mb-6 overflow-hidden rounded-3xl border border-slate-200 bg-[#E0F1F0]">
+                    <img src="{{ asset('img/R3.jpg') }}" alt="Aviso municipal de nueva ubicación de la Unidad de Tránsito y pago presencial de permiso de circulación" class="h-auto w-full object-cover">
+                    <figcaption class="px-4 py-3 text-sm font-bold text-[#033833]">Aviso destacado de tránsito municipal</figcaption>
+                </figure>
+
                 @if ($this->selectedService)
-                    <span class="inline-flex rounded-full bg-[#3A8F5A]/10 px-3 py-1 text-xs font-bold uppercase tracking-wide text-[#2f754a]">{{ $this->selectedService['category'] }}</span>
-                    <h3 id="service-detail-title" class="mt-4 text-2xl font-black text-[#123B63]">{{ $this->selectedService['title'] }}</h3>
+                    <span class="inline-flex rounded-full bg-[#F58220]/10 px-3 py-1 text-xs font-bold uppercase tracking-wide text-[#9a4f13]">{{ $this->selectedService['category'] }}</span>
+                    <h3 id="service-detail-title" class="mt-4 text-2xl font-black text-[#033833]">{{ $this->selectedService['title'] }}</h3>
                     <p class="mt-4 leading-7 text-slate-600">{{ $this->selectedService['description'] }}</p>
                     <x-ui.button href="#contacto" variant="outline" class="mt-6 w-full">{{ $this->selectedService['actionText'] }}</x-ui.button>
                 @else
-                    <h3 id="service-detail-title" class="text-2xl font-black text-[#123B63]">Selecciona un servicio</h3>
+                    <h3 id="service-detail-title" class="text-2xl font-black text-[#033833]">Selecciona un servicio</h3>
                     <p class="mt-4 leading-7 text-slate-600">El detalle aparecerá aquí cuando exista un resultado disponible.</p>
                 @endif
             </aside>
