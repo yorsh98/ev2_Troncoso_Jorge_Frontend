@@ -2,6 +2,12 @@
 
 namespace App\Providers;
 
+use App\Contracts\ContactMessageInterface;
+use App\Contracts\NewsCatalogInterface;
+use App\Contracts\ServiceCatalogInterface;
+use App\Services\ContactMessageService;
+use App\Services\MunicipalNewsCatalog;
+use App\Services\MunicipalServiceCatalog;
 use Carbon\CarbonImmutable;
 use Illuminate\Support\Facades\Date;
 use Illuminate\Support\Facades\DB;
@@ -15,7 +21,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        //
+        $this->app->bind(ServiceCatalogInterface::class, MunicipalServiceCatalog::class);
+        $this->app->bind(NewsCatalogInterface::class, MunicipalNewsCatalog::class);
+        $this->app->bind(ContactMessageInterface::class, ContactMessageService::class);
     }
 
     /**
