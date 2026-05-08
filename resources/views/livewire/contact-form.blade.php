@@ -2,8 +2,8 @@
     <div class="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-[0.8fr_1.2fr] lg:px-8">
         <div>
             <p class="text-sm font-bold uppercase tracking-[0.24em] text-[#215BAD]">Contacto ciudadano</p>
-            <h2 id="contact-title" class="mt-3 text-3xl font-black tracking-tight text-[#033833] sm:text-4xl">Formulario con validación en tiempo real</h2>
-            <p class="mt-4 text-lg leading-8 text-slate-600">El botón se habilita solo cuando todos los campos cumplen las reglas obligatorias.</p>
+            <h2 id="contact-title" class="mt-3 text-3xl font-black tracking-tight text-[#033833] sm:text-4xl">Canal de contacto municipal</h2>
+            <p class="mt-4 text-lg leading-8 text-slate-600">Completa el formulario para enviar una solicitud y recibir orientación del municipio.</p>
             <div class="mt-8 rounded-3xl bg-[#E0F1F0] p-6">
                 <p class="font-black text-[#033833]">Estado del envío</p>
                 <p class="mt-2 text-slate-700" aria-live="polite">{{ $this->canSubmit ? 'Formulario completo y listo para enviar.' : 'Complete el formulario para enviar.' }}</p>
@@ -62,7 +62,7 @@
                 <div class="sm:col-span-2">
                     <label class="flex items-start gap-3 rounded-2xl bg-white p-4 text-sm font-semibold text-slate-700 ring-1 ring-slate-200">
                         <input type="checkbox" wire:model.live="consent" class="mt-1 size-5 rounded border-slate-300 text-[#215BAD] focus:ring-4 focus:ring-[#F58220]/25" aria-describedby="consent-error">
-                        <span>Acepto que esta maqueta académica simule el registro de mi solicitud para demostrar validación e interacción.</span>
+                        <span>Acepto el tratamiento de mis datos de contacto para la gestión y respuesta de esta solicitud municipal.</span>
                     </label>
                     <x-ui.input-error for="consent" />
                 </div>
