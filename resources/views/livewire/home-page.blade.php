@@ -5,7 +5,11 @@
         <x-municipal.hero />
         <livewire:service-directory />
 
-        <section class="bg-white py-20" aria-labelledby="contactos-municipales-title">
+        <section class="relative isolate overflow-hidden bg-white py-20" aria-labelledby="contactos-municipales-title">
+            <div class="pointer-events-none absolute inset-x-0 top-0 -z-10 h-44 opacity-35" aria-hidden="true">
+                <img src="{{ asset('img/dividido.jpg') }}" alt="" class="h-full w-full object-cover">
+                <div class="absolute inset-0 bg-gradient-to-b from-white/15 via-white/45 to-white"></div>
+            </div>
             <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                 <div class="mx-auto max-w-3xl text-center">
                     <p class="text-sm font-bold uppercase tracking-[0.24em] text-[#215BAD]">Contactos municipales</p>

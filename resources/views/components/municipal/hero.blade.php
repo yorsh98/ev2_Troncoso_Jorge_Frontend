@@ -1,18 +1,46 @@
 <section id="inicio" class="relative isolate overflow-hidden bg-[#033833] text-white">
     <div class="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top_left,#F58220_0,transparent_26%),radial-gradient(circle_at_85%_20%,#E0F1F0_0,transparent_24%),linear-gradient(135deg,#033833_0%,#215BAD_58%,#033833_100%)]"></div>
+    <div class="pointer-events-none absolute -right-12 top-6 -z-10 h-[28rem] w-[36rem] overflow-hidden rounded-[3rem] opacity-40" aria-hidden="true">
+        <img src="{{ asset('img/PUENTE1.jpg') }}" alt="" class="h-full w-full object-cover">
+        <div class="absolute inset-0 bg-gradient-to-l from-[#033833]/75 via-[#033833]/35 to-transparent"></div>
+    </div>
+    <div class="pointer-events-none absolute left-0 top-0 -z-10 h-full w-full bg-[radial-gradient(circle_at_70%_30%,rgba(255,255,255,0.14),transparent_35%)]" aria-hidden="true"></div>
     <div class="absolute inset-x-0 bottom-0 -z-10 h-24 bg-gradient-to-t from-[#F7FAFC] to-transparent"></div>
 
-    <div class="mx-auto grid max-w-7xl gap-10 px-4 py-20 sm:px-6 lg:grid-cols-[1.05fr_0.95fr] lg:px-8 lg:py-28">
-        <div class="flex flex-col justify-center">
+    <div class="mx-auto grid max-w-7xl gap-10 px-4 py-16 sm:px-6 lg:grid-cols-[1.05fr_0.95fr] lg:px-8 lg:py-22">
+        <div class="flex flex-col justify-start">
             <p class="text-sm font-bold uppercase tracking-[0.28em] text-[#E0F1F0]">Chol Chol Avanza</p>
             <h1 class="mt-5 text-4xl font-black tracking-tight sm:text-6xl">Municipalidad de Cholchol</h1>
             <p class="mt-5 text-2xl font-bold text-[#E0F1F0]">Un municipio cercano, moderno y al servicio de la comunidad.</p>
             <p class="mt-6 max-w-2xl text-lg leading-8 text-white/90">
                 Accede rápidamente a servicios, noticias, contactos e información municipal desde una plataforma clara, accesible y adaptada a todos nuestros vecinos.
             </p>
-            <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+            <div class="mt-6 flex flex-col gap-3 sm:flex-row">
                 <x-ui.button href="#servicios" variant="accent">Ver servicios</x-ui.button>
                 <x-ui.button href="#contacto" variant="secondary">Contactar municipio</x-ui.button>
+            </div>
+
+            <div class="mt-6">
+                <p class="text-xs font-black uppercase tracking-[0.22em] text-[#E0F1F0]">Accesos directos</p>
+                <div class="mt-3 grid gap-3 sm:grid-cols-2">
+                    @foreach ([
+                        'Paga tu permiso de circulación aquí',
+                        'Pago patentes municipales',
+                        'Farmacia comunitaria',
+                        'Actividades municipales',
+                    ] as $shortcut)
+                        <button
+                            type="button"
+                            class="group relative rounded-xl border border-white/40 bg-white/10 px-4 py-3 text-left text-sm font-bold text-white backdrop-blur transition hover:bg-white/20 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#F58220]"
+                            aria-label="{{ $shortcut }} (próximamente)"
+                        >
+                            <span class="block pr-24">{{ $shortcut }}</span>
+                            <span class="pointer-events-none absolute right-3 top-1/2 hidden -translate-y-1/2 rounded-full bg-[#F58220] px-2.5 py-1 text-[10px] font-black uppercase tracking-wide text-white group-hover:inline-block">
+                                Próximamente
+                            </span>
+                        </button>
+                    @endforeach
+                </div>
             </div>
         </div>
 
@@ -83,7 +111,7 @@
                                         </svg>
                                     </span>
                                 </span>
-                                <span class="col-span-2 min-w-0 text-left leading-tight [overflow-wrap:anywhere]">Instagram </span>
+                                <span class="col-span-2 min-w-0 text-left leading-tight [overflow-wrap:anywhere]">Instagram</span>
                             </a>
                             <a
                                 href="https://municholchol.cl/"

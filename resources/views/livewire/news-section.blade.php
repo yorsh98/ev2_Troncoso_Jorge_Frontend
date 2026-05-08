@@ -1,4 +1,8 @@
-<section id="noticias" class="bg-[#F7FAFC] py-20" aria-labelledby="news-title">
+<section id="noticias" class="relative isolate overflow-hidden bg-[#F7FAFC] py-20" aria-labelledby="news-title">
+    <div class="pointer-events-none absolute inset-y-0 left-0 -z-10 w-[44%] opacity-35" aria-hidden="true">
+        <img src="{{ asset('img/PLAZAYFRONTISMUNICIPALIDAD1.jpg') }}" alt="" class="h-full w-full object-cover">
+        <div class="absolute inset-0 bg-gradient-to-r from-[#F7FAFC]/90 via-[#F7FAFC]/55 to-transparent"></div>
+    </div>
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <x-ui.section-title eyebrow="Noticias municipales" title="Actualidad comunal y participación" description="Infórmate sobre actividades, programas y novedades relevantes para la comunidad de Cholchol." id="news-title" />
 
