@@ -1,6 +1,6 @@
 <section id="noticias" class="bg-[#F7FAFC] py-20" aria-labelledby="news-title">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <x-ui.section-title eyebrow="Noticias municipales" title="Actualidad comunal y participación" description="Noticias ficticias y verosímiles para la maqueta académica, presentadas con carga dinámica mediante Livewire." id="news-title" />
+        <x-ui.section-title eyebrow="Noticias municipales" title="Actualidad comunal y participación" description="Infórmate sobre actividades, programas y novedades relevantes para la comunidad de Cholchol." id="news-title" />
 
         <div class="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3" aria-live="polite">
             @foreach ($this->displayedNews as $newsItem)
